@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <!-- jQuery, jQuery.ui -->
+    <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <!-- React -->
+    <script src="https://fb.me/react-0.13.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+
+    <!--Custom Styles -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <title>React Basics</title>
+    </head>
+    <body>
+    <div id="react-container2"></div>
+    <!-- Note: it is important what element load first -->
+    <div id="react-container3"></div>
+    <div id="react-container"></div>
+
+
+
+    <script type="text/babel">
+    var Mycomponent = React.createClass({
+      render: function () {
+        return <div>
+        <h1>{this.props.text}</h1>
+        <p>{this.props.children}</p>
+        </div>;
+      }
+    });
+
+    // in my component we return
+    // a text property - of the my component application
+
+// PROPS give us the opportunity to use different components with different data
+    // props help us to deal with properties
+    // text is just names of the element we
+    // created on line 23 to 27
+
+// wrap this in a container
+
+// in our component we referred to our children and to the text props
+  React.render(<div>
+    <Mycomponent text="Yo">"this is a child for 1"</Mycomponent>
+    <Mycomponent text="Yes">"this is a child for 2"</Mycomponent>
+    <Mycomponent text="Juhuu">"this is a child for 3"</Mycomponent>
+    <Mycomponent text="Juhuu2">"this is a child for line 4"</Mycomponent>
+    </div>, document.getElementById('react-container'));
+// prints the content of the div to the page
+    </script>
+
+    <script src="js/Note.js" type="text/babel" ></script>
+    </body>
+</html>
